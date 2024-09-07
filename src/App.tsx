@@ -14,6 +14,7 @@ function App(): React.JSX.Element {
                 </Col>
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
+                <div style ={ {border: '4px solid red', padding: '4px'}}></div>
             </header>
             <h1> This is my header</h1>
             
