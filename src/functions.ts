@@ -4,7 +4,8 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    
+    return ((temperature -32) * (5/9));
 }
 
 /**
@@ -12,7 +13,22 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    return 0;
+    let ans: number;
+    ans = 0;
+    if(first > 0)
+    {
+        ans += first;
+    }
+    if(second > 0)
+    {
+        ans += second;
+    }
+    if(third > 0)
+    {
+        ans += third;
+    }
+
+    return ans;
 }
 
 /**
@@ -20,7 +36,9 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    let ans: string = message.toUpperCase();
+    ans += '!';
+    return ans;
 }
 
 /**
@@ -28,7 +46,19 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    /*
+    let test: string = message.slice[-1];
+    console.log(test);
+    if(test === '?')
+    {
+        return true;
+    }
+    return false;
+    */
+   
+
+    // Used chatgpt for this, tried using a method i found online which is commented out above but I couldn't grab the last index.
+    return message.trim().endsWith("?");
 }
 
 /**
@@ -37,5 +67,13 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    return true;
+    if(word.toLowerCase() === 'yes')
+    {
+        return true;
+    }
+    if(word.toLowerCase() === 'no')
+    {
+        return false;
+    }
+    return null;
 }
