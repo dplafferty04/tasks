@@ -14,6 +14,7 @@ function App(): React.JSX.Element {
                 </Col>
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
+                
                 <div style ={ {border: '4px solid red', padding: '4px'}}></div>
             </header>
             <h1> This is my header</h1>
@@ -27,6 +28,7 @@ function App(): React.JSX.Element {
                 <li> Taxi Driver</li>
             </ol>
             </Row>
+        
          <div style={ {border: '1px solid blue', padding: '4px'} }>
         this will be surrounded by a border and padding.
         <div>
