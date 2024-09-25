@@ -162,11 +162,7 @@ export function editOption(
     targetId: number,
     targetOptionIndex: number,
     newOption: string
-<<<<<<< HEAD
 ): Question[] {
-=======
-) {
->>>>>>> upstream/task-state
     return [];
 }
 
