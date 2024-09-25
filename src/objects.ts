@@ -2,10 +2,14 @@ import { Question, QuestionType } from "./interfaces/question";
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Create a new blank question with the given `id`, `name`, and `type`. The `body` and
 =======
  * Create a new blank question with the given `id`, `name`, and `type. The `body` and
 >>>>>>> upstream/task-nested
+=======
+ * Create a new blank question with the given `id`, `name`, and `type. The `body` and
+>>>>>>> upstream/task-state
  * `expected` should be empty strings, the `options` should be an empty list, the `points`
  * should default to 1, and `published` should default to false.
  */
@@ -14,6 +18,7 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
+<<<<<<< HEAD
 <<<<<<< HEAD
     return {
         id: id,
@@ -28,6 +33,9 @@ export function makeBlankQuestion(
 =======
     return {};
 >>>>>>> upstream/task-nested
+=======
+    return {};
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -39,10 +47,14 @@ export function makeBlankQuestion(
  */
 export function isCorrect(question: Question, answer: string): boolean {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return question.expected.trim().toLowerCase() === answer.trim().toLowerCase();
 =======
     return false;
 >>>>>>> upstream/task-nested
+=======
+    return false;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -51,6 +63,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /*  if (question.type === "short_answer_question") {
@@ -71,6 +84,10 @@ export function isValid(question: Question, answer: string): boolean {
 export function isValid(question: Question, answer: string): boolean {
     return false;
 >>>>>>> upstream/task-nested
+=======
+export function isValid(question: Question, answer: string): boolean {
+    return false;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -81,10 +98,14 @@ export function isValid(question: Question, answer: string): boolean {
  */
 export function toShortForm(question: Question): string {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return `${question.id}: ${question.name.slice(0, 10)}`;
 =======
     return "";
 >>>>>>> upstream/task-nested
+=======
+    return "";
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -106,6 +127,7 @@ export function toShortForm(question: Question): string {
  */
 export function toMarkdown(question: Question): string {
 <<<<<<< HEAD
+<<<<<<< HEAD
     let markdown = `# ${question.name}\n${question.body}`;
     if (question.type === "multiple_choice_question") {
         markdown += "\n" + question.options.map(option => `- ${option}`).join("\n");
@@ -114,6 +136,9 @@ export function toMarkdown(question: Question): string {
 =======
     return "";
 >>>>>>> upstream/task-nested
+=======
+    return "";
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -122,10 +147,14 @@ export function toMarkdown(question: Question): string {
  */
 export function renameQuestion(question: Question, newName: string): Question {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return { ...question, name: newName };
 =======
     return question;
 >>>>>>> upstream/task-nested
+=======
+    return question;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -135,10 +164,14 @@ export function renameQuestion(question: Question, newName: string): Question {
  */
 export function publishQuestion(question: Question): Question {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return { ...question, published: !question.published };
 =======
     return question;
 >>>>>>> upstream/task-nested
+=======
+    return question;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -149,6 +182,7 @@ export function publishQuestion(question: Question): Question {
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return {
         ...oldQuestion,
         id: id,
@@ -158,6 +192,9 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
 =======
     return oldQuestion;
 >>>>>>> upstream/task-nested
+=======
+    return oldQuestion;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -169,6 +206,7 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  */
 export function addOption(question: Question, newOption: string): Question {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return {
         ...question,
         options: [...question.options, newOption]
@@ -176,6 +214,9 @@ export function addOption(question: Question, newOption: string): Question {
 =======
     return question;
 >>>>>>> upstream/task-nested
+=======
+    return question;
+>>>>>>> upstream/task-state
 }
 
 /**
@@ -193,6 +234,7 @@ export function mergeQuestion(
     { points }: { points: number }
 ): Question {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return {
         ...contentQuestion,
         id: id,
@@ -203,4 +245,7 @@ export function mergeQuestion(
 =======
     return contentQuestion;
 >>>>>>> upstream/task-nested
+=======
+    return contentQuestion;
+>>>>>>> upstream/task-state
 }

@@ -74,10 +74,13 @@
         }
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "SIMPLE_QUESTIONS_2": [],
     "EMPTY_QUESTIONS": [],
     "TRIVIA_QUESTIONS": []
 =======
+=======
+>>>>>>> upstream/task-state
     "TRIVIA_QUESTIONS": [
         {
             "id": 1,
@@ -222,5 +225,8 @@
             "published": true
         }
     ]
+<<<<<<< HEAD
 >>>>>>> upstream/task-nested
+=======
+>>>>>>> upstream/task-state
 }
