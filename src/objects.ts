@@ -1,15 +1,7 @@
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Create a new blank question with the given `id`, `name`, and `type`. The `body` and
-=======
  * Create a new blank question with the given `id`, `name`, and `type. The `body` and
->>>>>>> upstream/task-nested
-=======
- * Create a new blank question with the given `id`, `name`, and `type. The `body` and
->>>>>>> upstream/task-state
  * `expected` should be empty strings, the `options` should be an empty list, the `points`
  * should default to 1, and `published` should default to false.
  */
@@ -18,24 +10,7 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return {
-        id: id,
-        name: name,
-        type: type,
-        body: "",
-        expected: "",
-        options: [],
-        points: 1,
-        published: false
-    };
-=======
     return {};
->>>>>>> upstream/task-nested
-=======
-    return {};
->>>>>>> upstream/task-state
 }
 
 /**
@@ -46,15 +21,7 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return question.expected.trim().toLowerCase() === answer.trim().toLowerCase();
-=======
     return false;
->>>>>>> upstream/task-nested
-=======
-    return false;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -63,31 +30,8 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-/*  if (question.type === "short_answer_question") {
-        return true; // Any answer is valid for short answer questions.
-    }
-    if (question.type === "multiple_choice_question") {
-        return question.options.includes(answer); // Answer must be one of the options.
-    }
-    return false;
-
-*/
-export function isValid(question: Question, answer: string): boolean {
-    if (question.type === "multiple_choice_question") {
-        return question.options.includes(answer); 
-    }
-    return true;
-=======
 export function isValid(question: Question, answer: string): boolean {
     return false;
->>>>>>> upstream/task-nested
-=======
-export function isValid(question: Question, answer: string): boolean {
-    return false;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -97,15 +41,7 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return `${question.id}: ${question.name.slice(0, 10)}`;
-=======
     return "";
->>>>>>> upstream/task-nested
-=======
-    return "";
->>>>>>> upstream/task-state
 }
 
 /**
@@ -126,19 +62,7 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    let markdown = `# ${question.name}\n${question.body}`;
-    if (question.type === "multiple_choice_question") {
-        markdown += "\n" + question.options.map(option => `- ${option}`).join("\n");
-    }
-    return markdown;
-=======
     return "";
->>>>>>> upstream/task-nested
-=======
-    return "";
->>>>>>> upstream/task-state
 }
 
 /**
@@ -146,15 +70,7 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return { ...question, name: newName };
-=======
     return question;
->>>>>>> upstream/task-nested
-=======
-    return question;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -163,15 +79,7 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return { ...question, published: !question.published };
-=======
     return question;
->>>>>>> upstream/task-nested
-=======
-    return question;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -181,20 +89,7 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return {
-        ...oldQuestion,
-        id: id,
-        name: `Copy of ${oldQuestion.name}`,
-        published: false
-    };
-=======
     return oldQuestion;
->>>>>>> upstream/task-nested
-=======
-    return oldQuestion;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -205,18 +100,7 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return {
-        ...question,
-        options: [...question.options, newOption]
-    };
-=======
     return question;
->>>>>>> upstream/task-nested
-=======
-    return question;
->>>>>>> upstream/task-state
 }
 
 /**
@@ -233,19 +117,5 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return {
-        ...contentQuestion,
-        id: id,
-        name: name,
-        points: points,
-        published: false
-    };
-=======
     return contentQuestion;
->>>>>>> upstream/task-nested
-=======
-    return contentQuestion;
->>>>>>> upstream/task-state
 }
