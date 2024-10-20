@@ -33,7 +33,6 @@ const getNextHolidayByYear = (current: Holiday): Holiday => {
     return holidayOrder[nextIndex];
 };
 
-
 export function CycleHoliday(): React.JSX.Element {
     const [currentHoliday, setCurrentHoliday] = useState<Holiday>(holidays[0]);
 
