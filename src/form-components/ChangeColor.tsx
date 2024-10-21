@@ -1,40 +1,46 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 export function ChangeColor(): React.JSX.Element {
     const [chosenColor, setChosenColor] = useState<string>("red");
 
-    const colors = [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "purple",
-        "orange",
-        "cyan",
-        "magenta",
+    const colorOptions = [
+        { label: "red", value: "red" },
+        { label: "blue", value: "blue" },
+        { label: "green", value: "green" },
+        { label: "yellow", value: "yellow" },
+        { label: "purple", value: "purple" },
+        { label: "orange", value: "orange" },
+        { label: "cyan", value: "cyan" },
+        { label: "magenta", value: "magenta" },
     ];
 
     return (
         <div>
-            {colors.map((color) => (
-                <div key={color}>
-                    <input
-                        type="radio"
-                        name="colorChoice"
-                        id={`color-${color}`}
-                        value={color}
-                        onChange={() => setChosenColor(color)}
-                        checked={chosenColor === color}
-                    />
-                    <label htmlFor={`color-${color}`}>{color}</label>
-                </div>
+            {colorOptions.map((color) => (
+                <Form.Check
+                    key={color.value}
+                    inline
+                    type="radio"
+                    name="response"
+                    id={`response-${color.value}`}
+                    label={color.label}
+                    value={color.value}
+                    checked={chosenColor === color.value}
+                    onChange={(e) => setChosenColor(e.target.value)}
+                />
             ))}
             <div>
                 You have chosen
                 <span> </span>
                 <span
                     data-testid="colored-box"
-                    style={{ backgroundColor: chosenColor }}
+                    style={{
+                        backgroundColor: chosenColor,
+                        padding: "5px",
+                        borderRadius: "5px",
+                        color: "white",
+                    }}
                 >
                     {chosenColor}
                 </span>
