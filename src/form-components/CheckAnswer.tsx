@@ -8,16 +8,16 @@ export function CheckAnswer({
     expectedAnswer: string;
 }): React.JSX.Element {
     const [name, setName] = useState<string>("");
-    //const confirmation = ["✔️", "❌"];
     const [currCon, newCurrCon] = useState<string>("❌");
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
-        if (event.target.value == expectedAnswer) {
+        if (event.target.value === expectedAnswer) {
             newCurrCon("✔️");
         } else {
             newCurrCon("❌");
         }
     }
+
     return (
         <div>
             <Form.Group controlId="checkAnswer">
