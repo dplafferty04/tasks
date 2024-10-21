@@ -1,20 +1,15 @@
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
-<<<<<<< HEAD
- * Create a new blank question with the given `id`, `name`, and `type`. The `body` and
-=======
  * Create a new blank question with the given `id`, `name`, and `type. The `body` and
->>>>>>> upstream/task-nested
  * `expected` should be empty strings, the `options` should be an empty list, the `points`
  * should default to 1, and `published` should default to false.
  */
 export function makeBlankQuestion(
     id: number,
     name: string,
-    type: QuestionType
+    type: QuestionType,
 ): Question {
-<<<<<<< HEAD
     return {
         id: id,
         name: name,
@@ -23,26 +18,19 @@ export function makeBlankQuestion(
         expected: "",
         options: [],
         points: 1,
-        published: false
+        published: false,
     };
-=======
-    return {};
->>>>>>> upstream/task-nested
 }
 
 /**
  * Consumes a question and a potential `answer`, and returns whether or not
  * the `answer` is correct. You should check that the `answer` is equal to
  * the `expected`, ignoring capitalization and trimming any whitespace.
- *
- * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-<<<<<<< HEAD
-    return question.expected.trim().toLowerCase() === answer.trim().toLowerCase();
-=======
-    return false;
->>>>>>> upstream/task-nested
+    return (
+        answer.trim().toLowerCase() === question.expected.trim().toLowerCase()
+    );
 }
 
 /**
@@ -51,26 +39,11 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
-<<<<<<< HEAD
-
-/*  if (question.type === "short_answer_question") {
-        return true; // Any answer is valid for short answer questions.
-    }
-    if (question.type === "multiple_choice_question") {
-        return question.options.includes(answer); // Answer must be one of the options.
-    }
-    return false;
-
-*/
 export function isValid(question: Question, answer: string): boolean {
     if (question.type === "multiple_choice_question") {
-        return question.options.includes(answer); 
+        return question.options.includes(answer);
     }
-    return true;
-=======
-export function isValid(question: Question, answer: string): boolean {
-    return false;
->>>>>>> upstream/task-nested
+    return true; // For short answer, any answer is valid
 }
 
 /**
@@ -80,11 +53,7 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-<<<<<<< HEAD
-    return `${question.id}: ${question.name.slice(0, 10)}`;
-=======
-    return "";
->>>>>>> upstream/task-nested
+    return `${question.id}: ${question.name.substring(0, 10)}`;
 }
 
 /**
@@ -93,27 +62,13 @@ export function toShortForm(question: Question): string {
  *  - The second line should be the `body`
  *  - If the question is a `multiple_choice_question`, then the following lines
  *      need to show each option on its line, preceded by a dash and space.
- *
- * The example below might help, but don't include the border!
- * ----------Example-------------
- * |# Name                      |
- * |The body goes here!         |
- * |- Option 1                  |
- * |- Option 2                  |
- * |- Option 3                  |
- * ------------------------------
- * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-<<<<<<< HEAD
-    let markdown = `# ${question.name}\n${question.body}`;
+    let result = `# ${question.name}\n${question.body}`;
     if (question.type === "multiple_choice_question") {
-        markdown += "\n" + question.options.map(option => `- ${option}`).join("\n");
+        result += question.options.map((option) => `\n- ${option}`).join("");
     }
-    return markdown;
-=======
-    return "";
->>>>>>> upstream/task-nested
+    return result;
 }
 
 /**
@@ -121,11 +76,7 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-<<<<<<< HEAD
     return { ...question, name: newName };
-=======
-    return question;
->>>>>>> upstream/task-nested
 }
 
 /**
@@ -134,30 +85,21 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-<<<<<<< HEAD
     return { ...question, published: !question.published };
-=======
-    return question;
->>>>>>> upstream/task-nested
 }
 
 /**
  * Create a new question based on the old question, copying over its `body`, `type`,
  * `options`, `expected`, and `points` without changes. The `name` should be copied
- * over as "Copy of ORIGINAL NAME" (e.g., so "Question 1" would become "Copy of Question 1").
- * The `published` field should be reset to false.
+ * over as "Copy of ORIGINAL NAME". The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-<<<<<<< HEAD
     return {
         ...oldQuestion,
         id: id,
         name: `Copy of ${oldQuestion.name}`,
-        published: false
+        published: false,
     };
-=======
-    return oldQuestion;
->>>>>>> upstream/task-nested
 }
 
 /**
@@ -165,17 +107,12 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * the list of existing `options`. Remember that the new Question MUST have
  * its own separate copy of the `options` list, rather than the same reference
  * to the original question's list!
- * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-<<<<<<< HEAD
     return {
         ...question,
-        options: [...question.options, newOption]
+        options: [...question.options, newOption], // Create a new array with the new option added
     };
-=======
-    return question;
->>>>>>> upstream/task-nested
 }
 
 /**
@@ -183,24 +120,18 @@ export function addOption(question: Question, newOption: string): Question {
  * The new question will use the `body`, `type`, `options`, and `expected` of the
  * `contentQuestion`. The second question will provide the `points`.
  * The `published` status should be set to false.
- * Notice that the second Question is provided as just an object with a `points`
- * field; but the function call would be the same as if it were a `Question` type!
  */
 export function mergeQuestion(
     id: number,
     name: string,
     contentQuestion: Question,
-    { points }: { points: number }
+    { points }: { points: number },
 ): Question {
-<<<<<<< HEAD
     return {
         ...contentQuestion,
         id: id,
         name: name,
         points: points,
-        published: false
+        published: false,
     };
-=======
-    return contentQuestion;
->>>>>>> upstream/task-nested
 }
