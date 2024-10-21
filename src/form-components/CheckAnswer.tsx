@@ -24,6 +24,7 @@ export function CheckAnswer({
                 <Form.Label>Answer:</Form.Label>
                 <Form.Control value={name} onChange={updateName} />
             </Form.Group>
+
             <div>"{name}"</div>
             <div>"{currCon}"</div>
             <div>"{expectedAnswer}"</div>
