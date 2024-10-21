@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function ChangeColor(): React.JSX.Element {
+    // CHAT GPT
     const [chosenColor, chooseColor] = useState<string>("red");
     return (
         <div>
